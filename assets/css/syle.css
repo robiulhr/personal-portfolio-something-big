@@ -22,6 +22,9 @@ body {
 a {
   cursor: pointer;
 }
+main {
+  display: none;
+}
 .animate-delay-one-eight {
   animation-delay: var(--animate-delay-one-eight);
 }
