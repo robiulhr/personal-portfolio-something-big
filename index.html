@@ -36,42 +36,54 @@
 </head>
 
 <body>
-    <main class="h-100 w-100" id="webpage-content">
+    <main class="h-100 w-100 animate__animated animate__fadeIn animate__slowest" id="webpage-content">
         <section id='container'>
             <div class="my-avatar rounded max-w-300 max-h-300 data-tilt rounded-circle">
                 <img src="./assets/images/img01.jpg" alt="my avatar" class="h-100 w-100 rounded-circle">
             </div>
             <h2 class='a-second-title'>Robiul .H</h2>
-
+            <div class="social-links position-absolute bottom-0 start-50 mb-5">
+                <ul class="list-unstyled d-flex flex-row ">
+                    <li
+                        class="mx-3 social-links-items  animate__animated animate__bounceInDown animate-delay-one-fourth animate__slow">
+                        <a href="https://github.com/robiulhr" target="_blank" title="Github"><i
+                                class="fab fa-github"></i></a>
+                    </li>
+                    <li
+                        class="mx-3 social-links-items  animate__animated animate__bounceInDown animate-delay-one-eight animate__slow">
+                        <a href="https://www.linkedin.com/in/robiulhr/" target="_blank" title="Linkedin"><i
+                                class="fab fa-linkedin"></i></a>
+                    </li>
+                    <li class="mx-3 social-links-items  animate__animated animate__bounceInDown animate__slow"><a
+                            href="https://www.facebook.com/robiulhr01" target="_blank" title="Facebook"><i
+                                class="fab fa-facebook"></i></a></li>
+                </ul>
+            </div>
             <canvas></canvas>
             </div>
 
+
         </section>
-        <div class="social-links position-absolute bottom-0 start-50 mb-5">
-            <ul class="list-unstyled d-flex flex-row ">
-                <li class="mx-3 social-links-items  animate__animated animate__bounceInDown animate-delay-one-fourth"><a
-                        href="https://github.com/robiulhr" target="_blank" title="Github"><i
-                            class="fab fa-github"></i></a>
-                </li>
-                <li class="mx-3 social-links-items  animate__animated animate__bounceInDown animate-delay-one-eight"><a
-                        href="https://www.linkedin.com/in/robiulhr/" target="_blank" title="Linkedin"><i
-                            class="fab fa-linkedin"></i></a></li>
-                <li class="mx-3 social-links-items  animate__animated animate__bounceInDown"><a
-                        href="https://www.facebook.com/robiulhr01" target="_blank" title="Facebook"><i
-                            class="fab fa-facebook"></i></a></li>
-            </ul>
-        </div>
+
     </main>
 
+    <section class="visit-my-pc-wrapper position-fixed top-0 start-0">
+        <div class="visit-my-pc bg-danger">
+            <div class="pc-image h-100 w-100">
 
+            </div>
+        </div>
+    </section>
     <!-- jquery script -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- preloader script -->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <div class="preloader-div h-100 w-100 d-flex justify-content-center align-items-center bg-dark">
-        <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_kyu7xb1v.json" class="d-block" id="preloader"
-            background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+    <div id="preloader"
+        class="position-fixed top-0 start-0 preloader-div h-100 w-100 d-flex justify-content-center align-items-center bg-dark animate__animated  animate__slow">
+        <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_kyu7xb1v.json"
+            class="animate__animated animate__fadeIn animate__slow" background="transparent" speed="2"
+            style="width: 300px; height: 300px;" loop autoplay></lottie-player>
     </div>
     <script>
 
@@ -79,8 +91,11 @@
             'use strict';
             $(window).on('load', function () {
                 setInterval(() => {
-                    $("#preloader").hide();
+                    $("#preloader").addClass("animate__fadeOut");
                     $("#webpage-content").show();
+                }, 2000)
+                setInterval(() => {
+                    $("#preloader").css("visibility", "hidden");
                 }, 3000);
             });
         })(jQuery)
